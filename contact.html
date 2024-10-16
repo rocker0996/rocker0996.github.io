@@ -71,12 +71,12 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid nav-bar p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0">
-                    <h1 class="display-5 text-secondary m-0"><img src="img/brand-logo.png" class="img-fluid" alt="">Moving to Hungary</h1>
+            <nav class="navbar navbar-expand-lg navbar-light bg-white px-1 px-lg-3 py-1 py-lg-1">
+                <a href="index.html" class="navbar-brand p-0 m-0">
+                    <h1 class="display-6 display-lg-1 text-secondary m-0"><img src="img/brand-logo.png" id="brand-logo" class="img-fluid" alt="brand logo">Moving to Hungary</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -145,30 +145,30 @@
                         </div>
                         <h1 class="display-5 mb-4">Отправьте Ваше сообщение</h1>
                         <p class="mb-3">Оставте заявку и мы сами с Вами свяжемся через удобную для Вас платформу!</p>
-                        <form>
+                        <form id="form">
                             <div class="row g-4">
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
                                         <label for="name">Ваше имя</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                        <label for="email">Ваш Email</label>
+                                        <input type="email" class="form-control" name = "reply_to" id="reply_to" placeholder="Your Email">
+                                        <label for="reply_to">Ваш Email</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="phone" class="form-control" id="phone" placeholder="Phone">
+                                        <input type="phone" class="form-control" name = "phone" id="phone" placeholder="Phone">
                                         <label for="phone">Ваш телефон</label>
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-xl-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="project" placeholder="Project">
-                                        <label for="project">Какая услуга вас интересует</label>
+                                        <input type="text" class="form-control" name = "service" id="service" placeholder="Project">
+                                        <label for="service">Какая услуга вас интересует</label>
                                     </div>
                                 </div>
                                 <!-- <div class="col-12">
@@ -179,12 +179,12 @@
                                 </div> -->
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
+                                        <textarea class="form-control" placeholder="Leave a message here" name = "message" id="message" style="height: 160px"></textarea>
                                         <label for="message">Дополнительная информация</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3">Отправить</button>
+                                    <button id = "button" class="btn btn-primary w-100 py-3">Отправить</button>
                                 </div>
                             </div>
                         </form>
@@ -516,6 +516,12 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="js/contact.js"></script>
+    <script type="text/javascript">
+      emailjs.init('K7dNw-WJTUqPrCy64')
+    </script>
     </body>
 
 </html>

@@ -905,3 +905,11 @@
     background: var(--bs-secondary) !important;
 }
 /*** copyright end ***/
+
+#brand-logo{
+    max-height: 55px;
+}
+
+#car-t{
+    object-fit:cover;
+}
