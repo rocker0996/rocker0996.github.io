@@ -12,7 +12,13 @@ document.getElementById('form')
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       btn.value = 'Отправить';
-      alert('Отправлено!');
+       // Disable the button
+      btn.disabled = true;
+    
+    // Re-enable the button after n seconds (e.g., 5 seconds)
+    setTimeout(function() {
+        btn.disabled = false;
+    }, 50000); // 5000ms = 5 seconds
     }, (err) => {
       btn.value = 'Отправить';
       alert(JSON.stringify(err));
