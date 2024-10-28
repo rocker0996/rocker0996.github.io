@@ -15,7 +15,7 @@
 }
 /*** Spinner End ***/
 
-.back-to-top {
+.back-to-topp {
     position: fixed;
     right: 30px;
     bottom: 30px;
@@ -24,14 +24,13 @@
     height: 45px;
     align-items: center;
     justify-content: center;
-    transition: 0.5s;
     z-index: 99;
 }
 
 /*** Button Start ***/
 .btn {
     font-weight: 600;
-    transition: .5s;
+    transition: 0.2s;
 }
 
 .btn-square {
@@ -71,7 +70,6 @@
     color: var(--bs-white) !important;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    transition: 0.5s;
 }
 
 .btn.btn.btn-primary:hover {
@@ -86,7 +84,6 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     border: none;
-    transition: 0.5s;
 }
 
 .btn.btn-secondary:hover {
