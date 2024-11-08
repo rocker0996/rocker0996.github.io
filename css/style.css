@@ -913,7 +913,16 @@
 
 
 /*** Bootstrap extensitons ***/
-/* Small screens (sm breakpoint: ≥576px) */
+/* Phone screens (sm breakpoint: ≥0px) */
+
+@media (min-width: 1px) {
+    .fs-1 { font-size: 3rem; }
+    .fs-2 { font-size: 2.5rem; }
+    .fs-3 { font-size: 2rem; }
+    .fs-4 { font-size: 1.5rem; }
+    .fs-5 { font-size: 1.25rem; }
+    .fs-6 { font-size: 1rem; }
+  }
 @media (min-width: 576px) {
     .fs-sm-1 { font-size: 3rem; }
     .fs-sm-2 { font-size: 2.5rem; }
@@ -977,6 +986,21 @@
     cursor: pointer;
     padding: 1.75rem 2rem;
     color: #e02454;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.faq-accordian .card .card-header h2 {
+    cursor: pointer;
+    padding: 1.75rem 2rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
