@@ -9,18 +9,25 @@
 
 <url>
   <loc>https://movinghungary.com</loc>
-  <lastmod>2024-10-29T19:36:14+00:00</lastmod>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://movinghungary.com"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://movinghungary.com/EN"/>
+  <lastmod>2024-11-20T18:36:14+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 
 <url>
   <loc>https://movinghungary.com/contact.html</loc>
-  <lastmod>2024-10-29T19:36:14+00:00</lastmod>
-  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://movinghungary.com/contact.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://movinghungary.com/contact_EN.html"/>
+  <lastmod>2024-11-20T18:36:14+00:00</lastmod>
+  <priority>0.60</priority>
 </url>
+
 <url>
   <loc>https://movinghungary.com/faq.html</loc>
-  <lastmod>2024-10-29T19:36:14+00:00</lastmod>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://movinghungary.com/faq.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://movinghungary.com/faq_EN.html"/>
+  <lastmod>2024-11-20T18:36:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
