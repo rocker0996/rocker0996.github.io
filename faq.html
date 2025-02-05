@@ -28,6 +28,30 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
     </head>
+	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		// Получаем хеш из URL (например, #1233333)
+		let hash = window.location.hash;
+		
+		if (hash) {
+			// Убираем # из ID
+			let targetId = hash.substring(1);
+			
+			// Находим заголовок элемента и кликаем по нему, чтобы раскрыть
+			let targetHeader = document.getElementById(targetId);
+			
+			if (targetHeader) {
+				let collapseElement = targetHeader.nextElementSibling;
+				
+				if (collapseElement && collapseElement.classList.contains("collapse")) {
+					// Добавляем Bootstrap-класс show для раскрытия
+					collapseElement.classList.add("show");
+					targetHeader.classList.remove("collapsed"); // Убираем collapsed, если нужно
+				}
+			}
+		}
+	});
+	</script>
 
     <body>
 
@@ -184,7 +208,7 @@
                             <div class="accordion faq-accordian" id="faqAccordion">
                                 <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                    
-                                    <div class="card-header" id="headingOne">
+                                    <div id="1233333" class="card-header" id="headingOne">
                                         <h2 class="collapsed fs-6" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Как переехать в Венгрию в 2024 году?<span class="lni-chevron-up"></span></h2>
                                     </div>
                                     <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
@@ -254,10 +278,10 @@
                                 </div>
                                 
                                 <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                                    <div class="card-header" id="headingFive">
-                                        <h2 class="mb-0 collapsed fs-6" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">Как получить трудовое приглашение в Венгрию?<span class="lni-chevron-up"></span></h2>
+                                    <div class="card-header" id="headingFour">
+                                        <h2 class="mb-0 collapsed fs-6" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Как получить трудовое приглашение в Венгрию?<span class="lni-chevron-up"></span></h2>
                                     </div>
-                                    <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#faqAccordion">
                                         <div class="card-body">
                                             <p>Переезд в Венгрию для работы — это отличный способ начать карьеру в Европе. Вот как мы можем вам помочь:
                                             <br>
@@ -281,15 +305,59 @@
                                 </div>
 								
 								<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                                    <div class="card-header" id="headingFour">
-                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Можно получить разрешение на проживание в Венгрии для учёбы?<span class="lni-chevron-up"></span></h6>
+                                    <div class="card-header" id="headingFive">
+                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">Можно получить разрешение на проживание в Венгрии для учёбы?<span class="lni-chevron-up"></span></h6>
                                     </div>
-                                    <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#faqAccordion">
                                         <div class="card-body">
                                             <p>Студенты, желающие учиться в Венгрии, могут рассчитывать не только на платные, но и на бюджетные места со стипендией.
 											<br>Процесс поступления начинается в декабре-январе и занимает почти 6 месяцев.
 											<br>Это связано с тем, что процедура отбора студентов делится на 3 этапа(по 2 месяца каждый).
 											<br>На каждом из этапов, мы поможем вам подготовить и подать все необходимые документы максимально правильно и сделаем процесс получения студенческого разрешения на проживание простым и понятным, чтобы вы могли начать своё обучение без лишних забот.</p>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                    <div class="card-header" id="headingSix">
+                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">Какие налоги нужно платить при подаче на ВНЖ по Национальной карте через открытие фирмы в Венгрии в качестве директора или специалиста?<span class="lni-chevron-up"></span></h6>
+                                    </div>
+                                    <div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                                        <div class="card-body">
+                                            <p>В 2025 году минимальная заработная плата в Венгрии составляет 290 800 форинтов (около 700 евро), а гарантированная минимальная заработная плата для квалифицированных работников — 348 800 форинтов (около 850 евро).
+											<br>Расчет налогов для директора или специалиста с минимальной зарплатой:
+											<br>Брутто-зарплата: 348 800 HUF
+											<br>
+											<br>Налоги, удерживаемые из зарплаты сотрудника:
+											<br>o	Подоходный налог (SZJA): 15% от 348 800 HUF = 52 320 HUF
+											<br>o	Пенсионный взнос: 10% от 348 800 HUF = 34 880 HUF
+											<br>o	Медицинское страхование: 7% от 348 800 HUF = 24 416 HUF
+											<br>o	Взнос на трудоустройство: 1,5% от 348 800 HUF = 5 232 HUF
+											<br>Итого удержания: 116 848 HUF
+											<br>
+											<br>Чистая зарплата сотрудника:
+											<br>o	348 800 HUF (брутто) – 116 848 HUF (налоги) = 231 952 HUF
+											<br>
+											<br>Налоги, оплачиваемые работодателем:
+											<br>o	Социальный налог (SZOCHO): 13% от 348 800 HUF = 45 344 HUF
+											<br>o	Взнос на профессиональное обучение (SZAKHO): 1,5% от 348 800 HUF = 5 232 HUF
+											<br>Итого налоги работодателя: 50 576 HUF
+											<br>
+											<br>Общие расходы компании на одного сотрудника:
+											<br>•	116 848 HUF (расходы сотрудника) + 50 576 HUF (налоги работодателя) =  167 424HUF</p>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                    <div class="card-header" id="headingSeven">
+                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">Каков размер и порядок внесения уставного капитала при открытии фирмы?<span class="lni-chevron-up"></span></h6>
+                                    </div>
+                                    <div class="collapse" id="collapseSeven" aria-labelledby="headingSeven" data-parent="#faqAccordion">
+                                        <div class="card-body">
+                                            <p>Уставный капитал декларируется при регистрации компании, но фактическое внесение средств на банковский счет может быть отложено. 
+											<br>Если учредитель – иностранец, открыть счет в венгерском банке можно только после получения ВНЖ. Банки требуют идентификационные документы и подтверждение адреса проживания в Венгрии.
+											<br>Таким образом, уставный капитал можно внести только после открытия банковского счета, а счет открыть – после получения ВНЖ. До этого момента компания может работать без внесения средств.</p>
                                         </div>
                                     </div>
                                 </div>

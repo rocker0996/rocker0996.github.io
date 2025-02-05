@@ -28,6 +28,30 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
     </head>
+	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		// Получаем хеш из URL (например, #1233333)
+		let hash = window.location.hash;
+		
+		if (hash) {
+			// Убираем # из ID
+			let targetId = hash.substring(1);
+			
+			// Находим заголовок элемента и кликаем по нему, чтобы раскрыть
+			let targetHeader = document.getElementById(targetId);
+			
+			if (targetHeader) {
+				let collapseElement = targetHeader.nextElementSibling;
+				
+				if (collapseElement && collapseElement.classList.contains("collapse")) {
+					// Добавляем Bootstrap-класс show для раскрытия
+					collapseElement.classList.add("show");
+					targetHeader.classList.remove("collapsed"); // Убираем collapsed, если нужно
+				}
+			}
+		}
+	});
+	</script>
 
     <body>
 
@@ -255,10 +279,10 @@
                                 </div>
                                 
                                 <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                                    <div class="card-header" id="headingFive">
-                                        <h2 class="mb-0 collapsed fs-6" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">How to obtain a work invitation for Hungary<span class="lni-chevron-up"></span></h2>
+                                    <div class="card-header" id="headingFour">
+                                        <h2 class="mb-0 collapsed fs-6" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">How to obtain a work invitation for Hungary<span class="lni-chevron-up"></span></h2>
                                     </div>
-                                    <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#faqAccordion">
                                         <div class="card-body">
                                             <p>Moving to Hungary for Work – A Great Way to Start a Career in Europe. Here’s How We Can Help You:
                                             <br>
@@ -282,10 +306,10 @@
                                 </div>
 								
 								<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                                    <div class="card-header" id="headingFour">
-                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">How get a residence permit in Hungary for study?<span class="lni-chevron-up"></span></h6>
+                                    <div class="card-header" id="headingFive">
+                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">How get a residence permit in Hungary for study?<span class="lni-chevron-up"></span></h6>
                                     </div>
-                                    <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#faqAccordion">
                                         <div class="card-body">
                                             <p>Students wishing to study in Hungary can apply for both paid and budget-funded spots with scholarships.
 											<br>The application process begins in December-January and takes nearly 6 months.
@@ -294,7 +318,50 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                    <div class="card-header" id="headingSix">
+                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">What taxes should be paid when serving on a residence permit on a national card through the opening of a company in Hungary as a director or specialist?<span class="lni-chevron-up"></span></h6>
+                                    </div>
+                                    <div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                                        <div class="card-body">
+											<p>In 2025, the minimum wage in Hungary is 290,800 HUF (approximately 700 EUR), and the guaranteed minimum wage for skilled workers is 348,800 HUF (approximately 850 EUR).
+											<br>Tax calculation for a director or specialist with a minimum salary:
+											<br>Gross salary: 348,800 HUF
+											<br>
+											<br>Taxes deducted from the employee's salary:
+											<br>o	Personal income tax (SZJA): 15% of 348,800 HUF = 52,320 HUF
+											<br>o	Pension contribution: 10% of 348,800 HUF = 34,880 HUF
+											<br>o	Health insurance contribution: 7% of 348,800 HUF = 24,416 HUF
+											<br>o	Employment contribution: 1.5% of 348,800 HUF = 5,232 HUF
+											<br>Total deductions: 116,848 HUF
+											<br>
+											<br>Net salary of the employee:
+											<br>o	348,800 HUF (gross) – 116,848 HUF (taxes) = 231,952 HUF
+											<br>
+											<br>Taxes paid by the employer:
+											<br>o	Social tax (SZOCHO): 13% of 348,800 HUF = 45,344 HUF
+											<br>o	Vocational training contribution (SZAKHO): 1.5% of 348,800 HUF = 5,232 HUF
+											<br>Total employer taxes: 50,576 HUF
+											<br>
+											<br>Total company expenses for one employee:
+											<br>•	116,848 HUF (employee expenses) + 50,576 HUF (employer taxes) = 167,424 HUF</p>
+										</div>
+
+                                    </div>
+                                </div>
+								
+								<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                    <div class="card-header" id="headingSeven">
+                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">What is the size and procedure for making authorized capital when opening a company?<span class="lni-chevron-up"></span></h6>
+                                    </div>
+                                    <div class="collapse" id="collapseSeven" aria-labelledby="headingSeven" data-parent="#faqAccordion">
+                                        <div class="card-body">
+											<p>The share capital is declared during company registration, but the actual deposit into a bank account can be postponed. 
+											<br>If the founder is a foreigner, opening a bank account in a Hungarian bank is only possible after obtaining a residence permit (Hungarian residency). Banks require identification documents and proof of address in Hungary.
+											<br>Thus, the share capital can only be deposited after opening a bank account, and the account can only be opened after obtaining a residence permit. Until then, the company can operate without depositing funds.</p>
+										</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
                                 <i class="lni-emoji-sad"></i>
