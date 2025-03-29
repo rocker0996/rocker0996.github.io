@@ -1054,6 +1054,16 @@
         font-size: 13px;
     }
 }
+
+@media (max-width: 768px) {
+    .mobile-full-width {
+        width: 100%;
+        text-align: justify;
+        display: block;
+    }
+}
+
+
 /*** FAQ end ***/
 
 
