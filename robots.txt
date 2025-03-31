@@ -1,2 +1,7 @@
 User-agent: *
-Disallow: /index
+Disallow: /admin/
+Disallow: /login/
+Disallow: /tmp/
+Disallow: /404.html
+
+Sitemap: https://movinghungary.com/sitemap.xml

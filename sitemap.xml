@@ -1,34 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>https://movinghungary.com</loc>
-  <xhtml:link rel="alternate" hreflang="ru" href="https://movinghungary.com"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://movinghungary.com/EN"/>
-  <lastmod>2024-11-20T18:36:14+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-
-<url>
-  <loc>https://movinghungary.com/contact.html</loc>
-  <xhtml:link rel="alternate" hreflang="ru" href="https://movinghungary.com/contact.html"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://movinghungary.com/contact_EN.html"/>
-  <lastmod>2024-11-20T18:36:14+00:00</lastmod>
-  <priority>0.60</priority>
-</url>
-
-<url>
-  <loc>https://movinghungary.com/faq.html</loc>
-  <xhtml:link rel="alternate" hreflang="ru" href="https://movinghungary.com/faq.html"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://movinghungary.com/faq_EN.html"/>
-  <lastmod>2024-11-20T18:36:14+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://movinghungary.com/</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/en</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/faq</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/contact</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/white_card</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/national_card</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/company</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/gold_visa</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/visa</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/en/faq</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/en/contact</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/en/white_card</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/en/national_card</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/en/company</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/en/gold_visa</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/en/visa</loc>
+    <lastmod>2025-03-31</lastmod>
+    <priority>0.60</priority>
+  </url>
 </urlset>
