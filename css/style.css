@@ -1063,7 +1063,11 @@
     }
 }
 
-
+@media (max-width: 768px) {
+    #about-us-selection {
+        margin-top: 80px; /* Увеличьте или уменьшите значение по вашему усмотрению */
+    }
+}
 /*** FAQ end ***/
 
 
