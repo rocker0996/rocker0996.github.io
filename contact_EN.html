@@ -178,44 +178,72 @@
             <div class="container py-5">
                 <div class="row g-5 mb-5">
                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1">
-                        <div class="sub-style">
-                            <h5 class="sub-title text-primary pe-3">Leave a request</h5>
-                        </div>
-                        <h1 class="display-5 mb-4">Send your message</h1>
-                        <p class="mb-3">Leave a request and we will contact you through a convenient platform for you!</p>
-                        <form id="form">
-                            <div class="row g-4">
-                                <div class="col-lg-12 col-xl-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                        <label for="name">*Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-xl-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" name = "reply_to" id="reply_to" placeholder="Your Email" required>
-                                        <label for="reply_to">*Phone number/Email</label>
-                                    </div>
-                                </div>
-                                
-                                <!-- <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                        <label for="subject">Subject</label>
-                                    </div>
-                                </div> -->
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Leave a message here" name = "message" id="message" style="height: 160px"></textarea>
-                                        <label for="message">Additional information</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button id = "button" class="btn btn-primary w-100 py-3">Send</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+						<div class="sub-style">
+							<h5 class="sub-title text-primary pe-3">Leave a request</h5>
+						</div>
+				<h1 class="display-5 mb-4">Send your message</h1>
+				<p class="mb-3">Leave a request and we will contact you through a convenient platform for you!</p>
+					<div id="form-container" class="position-relative">
+						<form id="form">
+							<div class="row g-4">
+								<div class="col-lg-12 col-xl-6">
+									<div class="form-floating">
+										<input type="message" class="form-control text-black" id="reply_to" name="reply_to" placeholder="Name" required>
+										<label for="reply_to">*Name</label>
+									</div>
+								</div>
+
+								<div class="col-lg-12 col-xl-6">
+									<div class="form-floating">
+										<input type="message" class="form-control text-black" name="reply_to" id="reply_to" placeholder="Your Email" required>
+										<label for="reply_to">*Phone number/Email</label>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="form-floating">
+										<textarea class="form-control text-black" placeholder="Leave a message here" name="message" id="message" style="height: 160px" required></textarea>
+										<label for="message">*Additional information</label>
+									</div>
+								</div>
+
+								<div class="col-12 position-relative">
+									<div id="button-container" class="position-relative">
+										<button type="submit" id="button" class="btn btn-primary w-100 py-3">Send</button>
+									</div>
+									<div id="notification" class="d-none mt-2 p-3 bg-white border rounded text-center" style="z-index: 1100;">
+										<h3 class="text-primary mb-2">The form is successfully sent!</h3>
+										<button id="reset-form" class="btn btn-secondary">Fill the form again</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<style>
+					.text-black {
+						color: #000 !important;
+					}
+				</style>
+
+				<script>
+					document.getElementById("form").addEventListener("submit", function(e) {
+						e.preventDefault();
+						const buttonContainer = document.getElementById("button-container");
+						const notification = document.getElementById("notification");
+						buttonContainer.classList.add("d-none");
+						notification.classList.remove("d-none");
+					});
+
+					document.getElementById("reset-form").addEventListener("click", function() {
+						const buttonContainer = document.getElementById("button-container");
+						const notification = document.getElementById("notification");
+						notification.classList.add("d-none");
+						buttonContainer.classList.remove("d-none");
+						document.getElementById("form").reset();
+					});
+				</script>
+		
 				   <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
                         <div class="sub-style">
                             <h5 class="sub-title text-primary pe-3">Contacts</h5>
