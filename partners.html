@@ -33,6 +33,55 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
 
+	<script>
+	document.getElementById("form").addEventListener("submit", function(e) {
+		e.preventDefault();
+
+		const nameField = document.querySelectorAll('[name="reply_to"]')[0];
+		const contactField = document.querySelectorAll('[name="reply_to"]')[1];
+		const messageField = document.getElementById("message");
+
+		const name = nameField.value.trim();
+		const contact = contactField.value.trim();
+		const message = messageField.value.trim();
+
+		// Собираем текст для Telegram
+		const text = `📩 <b>Новая заявка с сайта</b>\n\n👤 <b>Имя:</b> ${name}\n📞 <b>Контакт:</b> ${contact}\n📝 <b>Сообщение:</b>\n${message}`;
+
+		// Отправляем в Telegram
+		const token = '7848166178:AAFGuLyo3sCnVNoz8Q-FHGMk86ID6lAaOjU';
+		const chatId = '7280194527';
+		const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+		fetch(url, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				chat_id: chatId,
+				text: text,
+				parse_mode: 'HTML'
+			})
+		})
+		.then(response => {
+			// Показываем уведомление и прячем кнопку
+			document.getElementById("button-container").classList.add("d-none");
+			document.getElementById("notification").classList.remove("d-none");
+			document.getElementById("form").reset();
+		})
+		.catch(error => {
+			alert("Ошибка при отправке в Telegram: " + error);
+		});
+	});
+
+	document.getElementById("reset-form").addEventListener("click", function() {
+		document.getElementById("notification").classList.add("d-none");
+		document.getElementById("button-container").classList.remove("d-none");
+		document.getElementById("form").reset();
+	});
+	</script>
+
     <body>
 
         <!-- Spinner Start -->
