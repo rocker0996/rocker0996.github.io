@@ -33,32 +33,7 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
 
-	<script>
-	document.getElementById("form").addEventListener("submit", async function (e) {
-		e.preventDefault();
 
-		const fields = document.querySelectorAll("[name='reply_to']");
-		const name = fields[0]?.value || "";
-		const contact = fields[1]?.value || "";
-		const message = document.getElementById("message").value;
-
-		const response = await fetch("https://e9f2423f-2a3e-4d36-9db3-8e94271837dc-00-3cy2coruo8s24.kirk.replit.dev/submit", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify({ name, contact, message })
-		});
-
-		if (response.ok) {
-			document.getElementById("button-container").classList.add("d-none");
-			document.getElementById("notification").classList.remove("d-none");
-			document.getElementById("form").reset();
-		} else {
-			alert("Произошла ошибка при отправке. Попробуйте позже.");
-		}
-	});
-</script>
 
 
     <body>
@@ -256,21 +231,46 @@
 				</style>
 
 				<script>
-					document.getElementById("form").addEventListener("submit", function(e) {
-						e.preventDefault();
-						const buttonContainer = document.getElementById("button-container");
-						const notification = document.getElementById("notification");
-						buttonContainer.classList.add("d-none");
-						notification.classList.remove("d-none");
-					});
+				document.getElementById("form").addEventListener("submit", async function (e) {
+					e.preventDefault();
 
-					document.getElementById("reset-form").addEventListener("click", function() {
-						const buttonContainer = document.getElementById("button-container");
-						const notification = document.getElementById("notification");
-						notification.classList.add("d-none");
-						buttonContainer.classList.remove("d-none");
-						document.getElementById("form").reset();
-					});
+					const fields = document.querySelectorAll("[name='reply_to']");
+					const name = fields[0]?.value || "";
+					const contact = fields[1]?.value || "";
+					const message = document.getElementById("message").value;
+
+					const buttonContainer = document.getElementById("button-container");
+					const notification = document.getElementById("notification");
+
+					try {
+						const response = await fetch("https://e9f2423f-2a3e-4d36-9db3-8e94271837dc-00-3cy2coruo8s24.kirk.replit.dev/submit", {
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json"
+							},
+							body: JSON.stringify({ name, contact, message })
+						});
+
+						if (response.ok) {
+							buttonContainer.classList.add("d-none");
+							notification.classList.remove("d-none");
+							document.getElementById("form").reset();
+						} else {
+							alert("Произошла ошибка при отправке. Попробуйте позже.");
+						}
+					} catch (error) {
+						console.error("Ошибка при отправке формы:", error);
+						alert("Сетевая ошибка. Попробуйте позже.");
+					}
+				});
+
+				document.getElementById("reset-form").addEventListener("click", function() {
+					const buttonContainer = document.getElementById("button-container");
+					const notification = document.getElementById("notification");
+					notification.classList.add("d-none");
+					buttonContainer.classList.remove("d-none");
+					document.getElementById("form").reset();
+				});
 				</script>
 
 
