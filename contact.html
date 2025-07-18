@@ -37,8 +37,9 @@
 	document.getElementById("form").addEventListener("submit", async function (e) {
 		e.preventDefault();
 
-		const name = document.querySelectorAll("[name='reply_to']")[0].value;
-		const contact = document.querySelectorAll("[name='reply_to']")[1].value;
+		const fields = document.querySelectorAll("[name='reply_to']");
+		const name = fields[0]?.value || "";
+		const contact = fields[1]?.value || "";
 		const message = document.getElementById("message").value;
 
 		const response = await fetch("https://e9f2423f-2a3e-4d36-9db3-8e94271837dc-00-3cy2coruo8s24.kirk.replit.dev/submit", {
@@ -57,7 +58,8 @@
 			alert("Произошла ошибка при отправке. Попробуйте позже.");
 		}
 	});
-	</script>
+</script>
+
 
     <body>
 
