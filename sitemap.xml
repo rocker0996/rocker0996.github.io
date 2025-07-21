@@ -2,82 +2,92 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://movinghungary.com</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/EN</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/faq</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/contact</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/white_card</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/national_card</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/company</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/gold_visa</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/visa</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/faq_EN</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/contact_EN</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/white_card_EN</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/national_card_EN</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/company_EN</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/gold_visa_EN</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://movinghungary.com/visa_EN</loc>
-    <lastmod>2025-03-31</lastmod>
+    <lastmod>2025-07-21</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/partners</loc>
+    <lastmod>2025-07-21</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://movinghungary.com/partners_EN</loc>
+    <lastmod>2025-07-21</lastmod>
     <priority>0.60</priority>
   </url>
 </urlset>
