@@ -33,32 +33,6 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
 
-	<script>
-	document.getElementById("form").addEventListener("submit", async function (e) {
-		e.preventDefault();
-
-		const name = document.querySelectorAll("[name='reply_to']")[0].value;
-		const contact = document.querySelectorAll("[name='reply_to']")[1].value;
-		const message = document.getElementById("message").value;
-
-		const response = await fetch("https://e9f2423f-2a3e-4d36-9db3-8e94271837dc-00-3cy2coruo8s24.kirk.replit.dev/submit", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify({ name, contact, message })
-		});
-
-		if (response.ok) {
-			document.getElementById("button-container").classList.add("d-none");
-			document.getElementById("notification").classList.remove("d-none");
-			document.getElementById("form").reset();
-		} else {
-			alert("Произошла ошибка при отправке. Попробуйте позже.");
-		}
-	});
-	</script>
-
     <body>
 
         <!-- Spinner Start -->
