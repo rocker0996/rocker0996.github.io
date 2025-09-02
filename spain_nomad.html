@@ -61,6 +61,37 @@
             position: relative;
             z-index: 2;
         }
+        /* Modern navbar styling */
+        .nav-bar .navbar {
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: saturate(180%) blur(8px);
+            -webkit-backdrop-filter: saturate(180%) blur(8px);
+        }
+        .navbar .nav-link { transition: color 0.2s ease; }
+        .navbar .nav-link:hover { color: #667eea; }
+        
+        /* Modern language switcher */
+        .btn-group .btn {
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+        }
+        .btn-group .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .btn-group .btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: #667eea;
+            color: white;
+        }
+        .btn-group .btn img {
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section { padding: 60px 0 40px; }
+        }
         
         .feature-card {
             background: white;
@@ -461,25 +492,27 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid nav-bar p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white px-1 px-lg-3 py-1 py-lg-1">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3 px-1 px-lg-3 py-1 py-lg-1">
                 <a href="https://movinghungary.com/" class="navbar-brand p-0 m-0">
                     <p class="display-6 display-lg-1 text-secondary m-0"><img src="img/brand-logo.png" id="brand-logo" class="img-fluid" alt="brand logo">MtH</p>
                 </a>
                 
                 <!-- Language switcher for mobile -->
-                <div class="d-flex d-lg-none me-2">
-                    <a href="https://movinghungary.com/spain_nomad_EN" class="text-muted me-2" style="display: flex; align-items: center; font-size: 0.9rem;">
-                        <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" 
-                             alt="English" 
-                             style="width: 16px; height: auto; margin-right: 4px; border: 1px solid black; border-radius: 2px;">
-                        ENG
-                    </a>
-                    <a href="https://movinghungary.com/spain_nomad" class="text-muted" style="display: flex; align-items: center; font-size: 0.9rem;">
-                        <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" 
-                             alt="Russian" 
-                             style="width: 16px; height: auto; margin-right: 4px; border: 1px solid black; border-radius: 2px;">
-                        RU
-                    </a>
+                <div class="d-flex d-lg-none me-3">
+                    <div class="btn-group" role="group">
+                        <a href="https://movinghungary.com/spain_nomad_EN" class="btn btn-outline-secondary btn-sm px-3 py-2 d-flex align-items-center" style="border-radius: 20px 0 0 20px; border-right: none;">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" 
+                                alt="English" 
+                                style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                            <span class="fw-medium">ENG</span>
+                        </a>
+                        <a href="https://movinghungary.com/spain_nomad" class="btn btn-secondary btn-sm px-3 py-2 d-flex align-items-center active" style="border-radius: 0 20px 20px 0;">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" 
+                                alt="Russian" 
+                                style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                            <span class="fw-medium">RU</span>
+                        </a>
+                    </div>
                 </div>
                 
                 <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -496,6 +529,25 @@
                         <a href="faq.html" class="nav-item nav-link">FAQ</a>
                         <a href="contact.html" class="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 d-lg-none mt-2">Запись на консультацию</a>
                     </div>
+                    
+                    <!-- Language switcher for desktop -->
+                    <div class="d-none d-lg-flex me-3">
+                        <div class="btn-group" role="group">
+                            <a href="https://movinghungary.com/spain_nomad_EN" class="btn btn-outline-secondary btn-sm px-3 py-2 d-flex align-items-center" style="border-radius: 20px 0 0 20px; border-right: none;">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" 
+                                    alt="English" 
+                                    style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                                <span class="fw-medium">ENG</span>
+                            </a>
+                            <a href="https://movinghungary.com/spain_nomad" class="btn btn-secondary btn-sm px-3 py-2 d-flex align-items-center active" style="border-radius: 0 20px 20px 0;">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" 
+                                    alt="Russian" 
+                                    style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                                <span class="fw-medium">RU</span>
+                            </a>
+                        </div>
+                    </div>
+                    
                     <a href="contact.html" class="btn btn-primary border-secondary rounded-pill py-2 px-4 px-lg-3 d-none d-lg-inline-block">Запись на консультацию</a>
                 </div>
             </nav>
@@ -518,7 +570,7 @@
                             <a href="contact.html" class="btn btn-outline-light btn-lg rounded-pill">Получить консультацию</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 text-center">
+                    <div class="col-lg-6 text-center mt-3 mt-lg-0">
                         <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80" 
                              alt="Digital Nomad Spain" 
                              class="img-fluid rounded-3 shadow-lg wow fadeInUp" 
@@ -694,8 +746,8 @@
                         </div>
                         <div class="col-lg-3 col-md-6">
                             <div class="stat-item">
-                                <div class="stat-number">30</div>
-                                <div>Дней на рассмотрение</div>
+                                <div class="stat-number">30 дней</div>
+                                <div>на рассмотрение</div>
                             </div>
                         </div>
                     </div>
@@ -904,10 +956,9 @@
             </div>
         </div>
 
-		<div class="faq_area section_padding_100" id="faq">
+		<!-- <div class="faq_area section_padding_100" id="faq">
             <div class="container">
                 <div class="row justify-content-center">
-                        <!-- FAQ Area -->
                     <div class="col-12 col-sm-10 col-lg-8">
 						<div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
                                 <i class="lni-emoji-sad"></i>
@@ -917,7 +968,7 @@
 					</div>                       
                 </div>
             </div>
-        </div>
+        </div> -->
 		<!-- Contact Start -->
             <div class="faq_area section_padding_100" id="faq">
                 <div class="container">
@@ -983,23 +1034,6 @@
                 </div> 
             </div>
         </div>
-
-
-        
-        <!-- Copyright Start -->
-        <div class="container-fluid d-none py-0">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-white"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>MtH</a>, все права защищены.</span>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end text-white">
-                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Copyright End -->
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary btn-lg-square back-to-topp"><i class="fa fa-arrow-up"></i></a>   
