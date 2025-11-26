@@ -31,6 +31,31 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <style>
+        .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 0; position: relative; overflow: hidden; }
+        .hero-section::before { content: ''; position: absolute; inset: 0; background: url('img/budapest.jpg') center/cover; opacity: 0.3; z-index: 1; }
+        .hero-content { position: relative; z-index: 2; }
+        .nav-bar .navbar { border-radius: 12px; background: rgba(255, 255, 255, 0.9) !important; backdrop-filter: saturate(180%) blur(8px); -webkit-backdrop-filter: saturate(180%) blur(8px); }
+        .navbar .nav-link { transition: color 0.2s ease; }
+        .navbar .nav-link:hover { color: #667eea; }
+        .btn-group .btn { transition: all 0.3s ease; font-size: 0.85rem; }
+        .btn-group .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .btn-group .btn.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-color: #667eea; color: white; }
+        .btn-group .btn img { filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1)); }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000; opacity: 0; visibility: hidden; transform: translateY(20px) scale(0.8); }
+        .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+        .back-to-top.pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);} 50% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6), 0 0 0 10px rgba(102, 126, 234, 0.1);} 100% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);} }
+        @media (max-width: 768px) { .back-to-top { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 18px; } .hero-section { padding: 60px 0 40px; } }
+        /* FAQ accordion styles to match faq.html */
+        .faq-accordian .card { border: none; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 16px; }
+        .faq-accordian .card-header { background: #fff; padding: 0; border: none; }
+        .faq-accordian .card-header h2 { margin: 0; }
+        .faq-accordian .card-header h2[aria-controls] { display: block; width: 100%; padding: 18px 20px; font-weight: 600; cursor: pointer; }
+        .faq-accordian .card-header h2:not(.collapsed) { color: #667eea; background: rgba(102,126,234,0.08); box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05); }
+        .faq-accordian .card-header h2:focus { outline: none; box-shadow: 0 0 0 0.2rem rgba(102,126,234,0.25); }
+        .faq-accordian .card-body { padding: 18px 20px; }
+        </style>
     </head>
 	<script>
 	document.addEventListener("DOMContentLoaded", function () {
@@ -88,18 +113,16 @@
                 </div>
                 <div class="col-lg-4 text-center text-lg-end">
                     <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a href="https://movinghungary.com/services_EN" class="text-muted me-2" style="display: flex; align-items: center;">
-                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" 
-                                 alt="English" 
-                                 style="width: 20px; height: auto; margin-right: 2px; border: 2px solid black; border-radius: 3px;">
-                            ENG
-                        </a>
-                        <a href="https://movinghungary.com/services" class="text-muted" style="display: flex; align-items: center;">
-                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" 
-                                 alt="Russian" 
-                                 style="width: 20px; height: auto; margin-right: 2px; border: 3px solid black; border-radius: 3px;">
-                            RU
-                        </a>
+                        <div class="btn-group" role="group">
+                            <a href="https://movinghungary.com/services_EN" class="btn btn-outline-light btn-sm px-3 py-2 d-flex align-items-center" style="border-radius: 20px 0 0 20px; border-right: none;">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="English" style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                                <span class="fw-medium">ENG</span>
+                            </a>
+                            <a href="https://movinghungary.com/services" class="btn btn-light btn-sm px-3 py-2 d-flex align-items-center active" style="border-radius: 0 20px 20px 0;">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="Russian" style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                                <span class="fw-medium">RU</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 				<!--<div class="col-lg-4 text-center text-lg-end">
@@ -115,39 +138,29 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid nav-bar p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white px-1 px-lg-3 py-1 py-lg-1">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3 px-1 px-lg-3 py-1 py-lg-1">
                 <a href="https://movinghungary.com/" class="navbar-brand p-0 m-0">
-                    <p class="display-6 display-lg-1 text-secondary m-0"><img src="img/brand-logo.png" id="brand-logo" class="img-fluid" alt="brand logo">Moving to Hungary</p>
+                    <p class="display-6 display-lg-1 text-secondary m-0"><img src="img/brand-logo.png" id="brand-logo" class="img-fluid" alt="brand logo">MtH</p>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
+                <div class="d-flex d-lg-none me-3">
+                    <div class="btn-group" role="group">
+                        <a href="https://movinghungary.com/services_EN" class="btn btn-outline-secondary btn-sm px-3 py-2 d-flex align-items-center" style="border-radius: 20px 0 0 20px; border-right: none;">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="English" style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                            <span class="fw-medium">ENG</span>
+                        </a>
+                        <a href="https://movinghungary.com/services" class="btn btn-secondary btn-sm px-3 py-2 d-flex align-items-center active" style="border-radius: 0 20px 20px 0;">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="Russian" style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                            <span class="fw-medium">RU</span>
+                        </a>
+                    </div>
+                </div>
                 <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <div class="d-flex justify-content-between">
-                            <div><a href="https://movinghungary.com" class="nav-item nav-link">Главная</a></div>
-                            <div class="d-inline d-lg-none">
-                                <div class="col-lg-4 text-center text-lg-end">
-                                    <div class="d-inline-flex align-items-center" style="height: 45px;">
-                                        <a href="https://movinghungary.com/services_EN" class="text-muted me-2" style="display: flex; align-items: center;">
-                                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" 
-                                                 alt="English" 
-                                                 style="width: 20px; height: auto; margin-right: 2px; border: 2px solid black; border-radius: 3px;">
-                                            ENG
-                                        </a>
-                                        <a href="https://movinghungary.com/services" class="text-muted" style="display: flex; align-items: center;">
-                                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" 
-                                                 alt="Russian" 
-                                                 style="width: 20px; height: auto; margin-right: 2px; border: 3px solid black; border-radius: 3px;">
-                                            RU
-                                        </a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-							<!-- <div class="d-inline d-lg-none"><p>ENG/ru</p></div> LANGUAGE SWITCH URL -->
-                        </div>
+                        <a href="https://movinghungary.com" class="nav-item nav-link">Главная</a>
                         <a href="https://movinghungary.com/#about-us-selection" class="nav-item nav-link">О нас</a>
                         <!--<a href="https://movinghungary.com/#our-services" class="nav-item nav-link">Услуги</a>-->
                         <a href="https://movinghungary.com/partners" class="nav-item nav-link">Партнерам</a>
@@ -190,18 +203,17 @@
         </div> -->
         <!-- Modal Search End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h1 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Список услуг</h1>
-                <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="https://movinghungary.com/" class="text-white">Главная</a></li>
-                   
-                    <li class="breadcrumb-item active text-secondary">Список услуг</li>
-                </ol>    
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container">
+                <div class="row align-items-center hero-content">
+                    <div class="col-12 text-center">
+                        <h1 class="display-4 fw-bold mb-3 wow fadeInUp text-white" data-wow-delay="0.1s">Список услуг</h1>
+                        <p class="lead wow fadeInUp" data-wow-delay="0.2s">Все услуги и сопровождение по ВНЖ, ПМЖ, гражданству и бизнесу в Венгрии</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Header End -->
         
         <!-- Contact Start -->
             <div class="faq_area section_padding_130" id="faq">
@@ -212,9 +224,9 @@
                             <div class="accordion faq-accordian" id="faqAccordion">
                                 <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div id="1233333" class="card-header" id="headingOne">
-                                        <h2 class="collapsed fs-6" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Белая карта(ВНЖ для Цифровых кочевников)<span class="lni-chevron-up"></span></h2>
+                                        <h2 class="collapsed fs-6" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Белая карта(ВНЖ для Цифровых кочевников)<span class="lni-chevron-up"></span></h2>
                                     </div>
-                                    <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                         <div class="card-body nikus">
                                             <br>Программа White Card разработана для иностранных специалистов, работающих удаленно с использованием цифровых технологий. Этот тип ВНЖ позволяет проживать в Венгрии, продолжая работать на международные компании или вести удаленную предпринимательскую деятельность.
 											<br>
@@ -267,9 +279,9 @@
                                 
                                 <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="card-header" id="headingTwo">
-                                        <h2 class="mb-0 collapsed fs-6" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">ВНЖ Национальная карта<span class="lni-chevron-up"></span></h2>
+                                        <h2 class="mb-0 collapsed fs-6" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">ВНЖ Национальная карта<span class="lni-chevron-up"></span></h2>
                                     </div>
-                                    <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                                         <div class="card-body nikus">
                                             <br>Национальная карта – это вид на жительство (ВНЖ) в Венгрии, который предоставляет возможность легально проживать и работать в стране. Такой тип ВНЖ доступен как для трудоустройства у работодателя, так и для ведения бизнеса через собственную компанию. Рассмотрим основные требования и нюансы подачи.
 											<br>
@@ -313,9 +325,9 @@
                                 
                                 <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="card-header" id="headingThree">
-                                        <h2 class="mb-0 collapsed fs-6" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">ВНЖ для предпринимателей<span class="lni-chevron-up"></span></h2>
+                                        <h2 class="mb-0 collapsed fs-6" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">ВНЖ для предпринимателей<span class="lni-chevron-up"></span></h2>
                                     </div>
-                                    <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                                         <div class="card-body nikus">
                                             <br>Идеальное решение для фрилансеров и индивидуальных предпринимателей, желающих вести бизнес в Венгрии и легально проживать в ЕС.
 											<br>ВНЖ могут получить иностранные граждане, работающие самостоятельно за вознаграждение (фриланс, услуги, онлайн-деятельность), или генеральные директора и учредители зарегистрированных коммерческих организаций.
@@ -354,9 +366,9 @@
                                 
                                 <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="card-header" id="headingFour">
-                                        <h2 class="mb-0 collapsed fs-6" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">ВНЖ через инвестиции<span class="lni-chevron-up"></span></h2>
+                                        <h2 class="mb-0 collapsed fs-6" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">ВНЖ через инвестиции<span class="lni-chevron-up"></span></h2>
                                     </div>
-                                    <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseFour" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
                                         <div class="card-body nikus">
                                             <br>ВНЖ в Венгрии для гостевых инвесторов
 											<br>Инвестиции, соответствующие национальному экономическому интересу:
@@ -432,9 +444,9 @@
 								
 								<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="card-header" id="headingFive">
-                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">ВНЖ для студентов<span class="lni-chevron-up"></span></h6>
+                                        <h6 class="mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">ВНЖ для студентов<span class="lni-chevron-up"></span></h6>
                                     </div>
-                                    <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseFive" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
                                         <div class="card-body nikus">
                                             <p>Студенты, желающие учиться в Венгрии, могут рассчитывать не только на платные, но и на бюджетные места со стипендией.
 											<br>Процесс поступления начинается в декабре-январе и занимает почти 6 месяцев.
@@ -446,9 +458,9 @@
 								
 								<!--<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="card-header" id="headingSix">
-                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">0001122<span class="lni-chevron-up"></span></h6>
+                                        <h6 class="mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">0001122<span class="lni-chevron-up"></span></h6>
                                     </div>
-                                    <div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseSix" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
                                         <div class="card-body">
                                             <p>В 2025 году минимальная заработная плата в Венгрии составляет 290 800 форинтов (около 700 евро), а гарантированная минимальная заработная плата для квалифицированных работников — 348 800 форинтов (около 850 евро).
 											<br>Расчет налогов для директора или специалиста с минимальной зарплатой:
@@ -477,9 +489,9 @@
 								
 								<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="card-header" id="headingSeven">
-                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">Каков размер и порядок внесения уставного капитала при открытии фирмы?<span class="lni-chevron-up"></span></h6>
+                                        <h6 class="mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">Каков размер и порядок внесения уставного капитала при открытии фирмы?<span class="lni-chevron-up"></span></h6>
                                     </div>
-                                    <div class="collapse" id="collapseSeven" aria-labelledby="headingSeven" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseSeven" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
                                         <div class="card-body">
                                             <p>Уставный капитал декларируется при регистрации компании, но фактическое внесение средств на банковский счет может быть отложено. 
 											<br>Если учредитель – иностранец, открыть счет в венгерском банке можно только после получения ВНЖ. Банки требуют идентификационные документы и подтверждение адреса проживания в Венгрии.
@@ -490,9 +502,9 @@
                                 
 								<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="card-header" id="headingEight">
-                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">Существуют ли какие-либо обязательства, связанные с минимальной продолжительностью пребывания в Венгрии для владельцев вида на жительство для гостевых инвесторов?<span class="lni-chevron-up"></span></h6>
+                                        <h6 class="mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">Существуют ли какие-либо обязательства, связанные с минимальной продолжительностью пребывания в Венгрии для владельцев вида на жительство для гостевых инвесторов?<span class="lni-chevron-up"></span></h6>
                                     </div>
-                                    <div class="collapse" id="collapseEight" aria-labelledby="headingEight" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseEight" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
                                         <div class="card-body">
                                             <p>Нет, владельцы вида на жительство для гостевых инвесторов не обязаны соблюдать минимальную продолжительность пребывания в Венгрии.
 											<br>Это значит, что:
@@ -507,9 +519,9 @@
 								
 								<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="card-header" id="headingNine">
-                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">Может ли гражданин третьей страны, имеющий действительный вид на жительство, подать заявление на получение вида на жительство для гостевых инвесторов в Венгрии?<span class="lni-chevron-up"></span></h6>
+                                        <h6 class="mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">Может ли гражданин третьей страны, имеющий действительный вид на жительство, подать заявление на получение вида на жительство для гостевых инвесторов в Венгрии?<span class="lni-chevron-up"></span></h6>
 									</div>
-									<div class="collapse" id="collapseNine" aria-labelledby="headingNine" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseNine" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
 										<div class="card-body">
 											<p>Если вы являетесь владельцем вида на жительство в Венгрии и имеете право въезжать на территорию Венгрии без визы на основании вашего гражданства, вы можете подать заявление на получение вида на жительство для гостевых инвесторов в течение 30 дней с момента вашего первого въезда на территорию Венгрии.
 											<br>Если у вас есть вид на жительство в Венгрии и по причине вашего гражданства вы не имеете права въезжать в Венгрию без визы, у вас нет возможности подать заявление на получение вида на жительство для гостевых инвесторов. В этом случае вам необходимо сначала подать заявление на получение визы для гостевых инвесторов через Консульство Венгрии.
@@ -519,9 +531,9 @@
                                 </div>
                                	<div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="card-header" id="headingTen">
-                                        <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">Установлен ли законодательством крайний срок въезда для гостевых инвесторов?<span class="lni-chevron-up"></span></h6>
+                                        <h6 class="mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">Установлен ли законодательством крайний срок въезда для гостевых инвесторов?<span class="lni-chevron-up"></span></h6>
 									</div>
-									<div class="collapse" id="collapseTen" aria-labelledby="headingTen" data-parent="#faqAccordion">
+                                    <div class="collapse" id="collapseTen" aria-labelledby="headingTen" data-bs-parent="#faqAccordion">
 										<div class="card-body">
 											<p>Да, после получения визы для гостевых инвесторов вы можете въехать в Венгрию в любое время в течение срока ее действия. <br>Однако важно помнить, что если в вашем заявлении на визу вы указали обязательство совершить инвестиции, их нужно выполнить в этот же период.
 											<br>Кроме того, после въезда в Венгрию у вас есть 30 дней, чтобы подать заявление на вид на жительство для гостевых инвесторов. Вместе с заявлением нужно предоставить документы, подтверждающие выполнение инвестиционного обязательства.
@@ -531,9 +543,9 @@
                                 </div> -->
                                 <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                     <div class="card-header" id="headingEleven">
-										<h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">Дополнительные услуги<span class="lni-chevron-up"></span></h6>
+                                        <h6 class="mb-0 collapsed" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">Дополнительные услуги<span class="lni-chevron-up"></span></h6>
 									</div>
-									<div class="collapse leading-relaxed" id="collapseEleven" aria-labelledby="headingEleven" data-parent="#faqAccordion">
+                                    <div class="collapse leading-relaxed" id="collapseEleven" aria-labelledby="headingEleven" data-bs-parent="#faqAccordion">
 										<div class="card-body nikus">
 											<br>•	Подготовка пакета документов для подачи на ВНЖ;
 											<br>•	Регистрация фирмы в Венгрии (юридическое лицо);
@@ -572,7 +584,7 @@
             
            
 
- <div class="container-fluid bg-primary px-5 d-lg-block">
+ <div class="container-fluid bg-primary px-3 px-lg-5 d-lg-block">
             <div class="row gx-0 align-items-center">
                 <div class="col-lg-5 text-center text-lg-start mb-lg-0">
                     <div class="d-flex">
@@ -620,7 +632,9 @@
         <!-- Copyright End -->
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-topp"><i class="fa fa-arrow-up"></i></a>   
+        <button class="back-to-top" id="backToTop" aria-label="Вернуться наверх">
+            <i class="fas fa-arrow-up"></i>
+        </button>   
 
         
     <!-- JavaScript Libraries -->
@@ -636,6 +650,25 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            if (backToTopButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) { backToTopButton.classList.add('show'); } else { backToTopButton.classList.remove('show'); }
+                });
+                backToTopButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    backToTopButton.classList.add('pulse');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setTimeout(() => { backToTopButton.classList.remove('pulse'); }, 2000);
+                });
+                backToTopButton.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); backToTopButton.click(); }
+                });
+            }
+        });
+    </script>
     </body>
 
 </html>

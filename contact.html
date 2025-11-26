@@ -31,6 +31,26 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+    <style>
+        .hero-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 80px 0; position: relative; overflow: hidden; }
+        .hero-section::before { content: ''; position: absolute; inset: 0; background: url('img/budapest.jpg') center/cover; opacity: 0.3; z-index: 1; }
+        .hero-content { position: relative; z-index: 2; }
+        .nav-bar .navbar { border-radius: 12px; background: rgba(255, 255, 255, 0.9) !important; backdrop-filter: saturate(180%) blur(8px); -webkit-backdrop-filter: saturate(180%) blur(8px); }
+        .navbar .nav-link { transition: color 0.2s ease; }
+        .navbar .nav-link:hover { color: #667eea; }
+        .btn-group .btn { transition: all 0.3s ease; font-size: 0.85rem; }
+        .btn-group .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .btn-group .btn.active { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-color: #667eea; color: white; }
+        .btn-group .btn img { filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1)); }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; cursor: pointer; box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000; opacity: 0; visibility: hidden; transform: translateY(20px) scale(0.8); }
+        .back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+        .back-to-top:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4); background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%); }
+        .back-to-top:active { transform: translateY(-2px) scale(1.05); }
+        .back-to-top i { transition: transform 0.3s ease; }
+        .back-to-top:hover i { transform: translateY(-2px); }
+        .back-to-top.pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); } 50% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6), 0 0 0 10px rgba(102, 126, 234, 0.1); } 100% { box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); } }
+    </style>
     </head>
 
 
@@ -67,18 +87,16 @@
                 </div>
                 <div class="col-lg-4 text-center text-lg-end">
                     <div class="d-inline-flex align-items-center" style="height: 45px;">
-                        <a href="https://movinghungary.com/contact_EN" class="text-muted me-2" style="display: flex; align-items: center;">
-                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" 
-                                 alt="English" 
-                                 style="width: 20px; height: auto; margin-right: 2px; border: 2px solid black; border-radius: 3px;">
-                            ENG
-                        </a>
-                        <a href="https://movinghungary.com/contact" class="text-muted" style="display: flex; align-items: center;">
-                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" 
-                                 alt="Russian" 
-                                 style="width: 20px; height: auto; margin-right: 2px; border: 3px solid black; border-radius: 3px;">
-                            RU
-                        </a>
+                        <div class="btn-group" role="group">
+                            <a href="https://movinghungary.com/contact_EN" class="btn btn-outline-light btn-sm px-3 py-2 d-flex align-items-center" style="border-radius: 20px 0 0 20px; border-right: none;">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="English" style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                                <span class="fw-medium">ENG</span>
+                            </a>
+                            <a href="https://movinghungary.com/contact" class="btn btn-light btn-sm px-3 py-2 d-flex align-items-center active" style="border-radius: 0 20px 20px 0;">
+                                <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="Russian" style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                                <span class="fw-medium">RU</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,38 +105,29 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-fluid nav-bar p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white px-1 px-lg-3 py-1 py-lg-1">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm rounded-3 px-1 px-lg-3 py-1 py-lg-1">
                 <a href="https://movinghungary.com/" class="navbar-brand p-0 m-0">
-                    <h1 class="display-6 display-lg-1 text-secondary m-0"><img src="img/brand-logo.png" id="brand-logo" class="img-fluid" alt="brand logo">Moving to Hungary</h1>
+                    <p class="display-6 display-lg-1 text-secondary m-0"><img src="img/brand-logo.png" id="brand-logo" class="img-fluid" alt="brand logo">MtH</p>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
+                <div class="d-flex d-lg-none me-3">
+                    <div class="btn-group" role="group">
+                        <a href="https://movinghungary.com/contact_EN" class="btn btn-outline-secondary btn-sm px-3 py-2 d-flex align-items-center" style="border-radius: 20px 0 0 20px; border-right: none;">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" alt="English" style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                            <span class="fw-medium">ENG</span>
+                        </a>
+                        <a href="https://movinghungary.com/contact" class="btn btn-secondary btn-sm px-3 py-2 d-flex align-items-center active" style="border-radius: 0 20px 20px 0;">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" alt="Russian" style="width: 18px; height: auto; margin-right: 6px; border-radius: 2px;">
+                            <span class="fw-medium">RU</span>
+                        </a>
+                    </div>
+                </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 px-2 d-flex justify-content-center">
-                        <div class="d-flex justify-content-between">
-                            <div><a href="https://movinghungary.com" class="nav-item nav-link">Главная</a></div>
-                            <div class="d-inline d-lg-none">
-                                <div class="col-lg-4 text-center text-lg-end">
-                                    <div class="d-inline-flex align-items-center" style="height: 45px;">
-                                        <a href="https://movinghungary.com/contact_EN" class="text-muted me-2" style="display: flex; align-items: center;">
-                                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/gb.svg" 
-                                                 alt="English" 
-                                                 style="width: 20px; height: auto; margin-right: 2px; border: 2px solid black; border-radius: 3px;">
-                                            ENG
-                                        </a>
-                                        <a href="https://movinghungary.com/contact" class="text-muted" style="display: flex; align-items: center;">
-                                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/flags/4x3/ru.svg" 
-                                                 alt="Russian" 
-                                                 style="width: 20px; height: auto; margin-right: 2px; border: 3px solid black; border-radius: 3px;">
-                                            RU
-                                        </a>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
+                        <a href="https://movinghungary.com" class="nav-item nav-link">Главная</a>
                         <a href="https://movinghungary.com/#about-us-selection" class="nav-item nav-link">О нас</a>
                         <a href="https://movinghungary.com/services" class="nav-item nav-link">Услуги</a>
                         <a href="https://movinghungary.com/partners" class="nav-item nav-link">Партнерам</a>
@@ -133,7 +142,7 @@
                                 <a href="404.html" class="dropdown-item">404 Page</a>
                             </div>
                         </div> -->
-                        <a href="https://movinghungary.com/#reviews" class="nav-item nav-link active">Отзывы</a>
+                        <a href="index.html#reviews" class="nav-item nav-link">Отзывы</a>
                         <a href="faq.html" class="nav-item nav-link">FAQ</a>
                     </div>
                     <!-- <button class="btn btn-primary btn-md-square border-secondary mb-3 mb-md-3 mb-lg-0 me-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button> -->
@@ -164,18 +173,21 @@
         </div> -->
         <!-- Modal Search End -->
 
-        <!-- Header Start -->
-        <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4 wow fadeInDown" data-wow-delay="0.1s">Свяжитесь с нами!</h1>
-                <ol class="breadcrumb justify-content-center text-white mb-0 wow fadeInDown" data-wow-delay="0.3s">
-                    <li class="breadcrumb-item"><a href="https://movinghungary.com/" class="text-white">Главная</a></li>
-                   
-                    <li class="breadcrumb-item active text-secondary">Заявка на консультацию</li>
-                </ol>    
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="container">
+                <div class="row align-items-center hero-content">
+                    <div class="col-lg-12 text-center d-flex flex-column align-items-center">
+                        <h1 class="display-4 fw-bold mb-3 wow fadeInUp text-white" data-wow-delay="0.1s">Свяжитесь с нами</h1>
+                        <p class="lead mb-4 wow fadeInUp px-2 px-md-0" data-wow-delay="0.2s">Оставьте заявку — подберём удобный способ связи и ответим на вопросы.</p>
+                        <div class="wow fadeInUp text-center text-lg-start" data-wow-delay="0.3s">
+                            <a href="#form-container" class="btn btn-light btn-lg rounded-pill me-3 mb-2 mb-lg-0">Оставить заявку</a>
+                            <a href="https://wa.me/36707037537" class="btn btn-outline-light btn-lg rounded-pill">Написать в WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Header End -->
 
         <!-- Contact Start -->
         <div class="container-fluid contact overflow-hidden py-5">
@@ -561,7 +573,9 @@
         <!-- Copyright End -->
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-primary btn-lg-square back-to-topp"><i class="fa fa-arrow-up"></i></a>   
+        <button class="back-to-top" id="backToTop" aria-label="Вернуться наверх">
+            <i class="fas fa-arrow-up"></i>
+        </button>   
 
         
     <!-- JavaScript Libraries -->
@@ -576,6 +590,32 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTopButton = document.getElementById('backToTop');
+            if (backToTopButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('show');
+                    } else {
+                        backToTopButton.classList.remove('show');
+                    }
+                });
+                backToTopButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    backToTopButton.classList.add('pulse');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    setTimeout(() => { backToTopButton.classList.remove('pulse'); }, 2000);
+                });
+                backToTopButton.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        backToTopButton.click();
+                    }
+                });
+            }
+        });
+    </script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript" src="js/contact.js"></script>
